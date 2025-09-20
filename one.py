@@ -13,12 +13,10 @@ def is_anagram(s:str,t:str)->bool:
     for  ch in s:
         if ch not in strThr:
             strThr += ch
-    print(strThr)
 
     for  ch in t:
         if ch not in strFr:
             strFr += ch
-    print(strFr)
 
     for ch in strThr:
         if ch.isalpha():
@@ -29,9 +27,6 @@ def is_anagram(s:str,t:str)->bool:
         if ch.isalpha():
             strTwo += ch
 
-    print(strOne)
-    print(strTwo)
-
     for chOne in strOne:
         for chTwo in strTwo:
             if(chOne == chTwo):
@@ -40,25 +35,16 @@ def is_anagram(s:str,t:str)->bool:
                 myMatrix.append(0)
 
     # Convert to NumPy array
-    np_array = np.array(myMatrix)
-    print(np_array)
+    npArray = np.array(myMatrix)
     # Calculate side length for square matrix
-    list_length = len(strOne)  
-    ''' 
-        if math.isqrt(list_length) ** 2 != list_length:
-        raise ValueError("The list length is not a perfect square, cannot form a square matrix.")
-            list_length = len(myMatrix)
-            
-    side_length = int(math.sqrt(list_length))
-    '''
-
-
-
+    listLength = len(strOne)  
     # Reshape into a square matrix
-    square_matrix = np_array.reshape(list_length, list_length)
-    print(square_matrix)
-    a = abs(np.linalg.det(square_matrix))
+    squareMatrix = npArray.reshape(listLength, listLength)
+    a = abs(np.linalg.det(squareMatrix))
     return a
 
-result = is_anagram("rat","car")
-print(result)
+result = is_anagram("apple","papel")
+if result == 1:
+    print("Correct")
+else:
+    print("not correct")
