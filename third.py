@@ -13,6 +13,6 @@ def most_common_str(s:str)->str:
                 pos_by_char[chDict] += 1
     return max(pos_by_char, key=pos_by_char.get)
 
-print(most_common_str("\n\t"))
+print(most_common_str("huseyin"))
 
       
